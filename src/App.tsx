@@ -10,6 +10,7 @@ import ITILCoachCaseStudy from "./components/ITILCoachCaseStudy";
 import Portfolio2023CaseStudy from "./components/Portfolio2023CaseStudy";
 import Portfolio2022CaseStudy from "./components/Portfolio2022CaseStudy";
 import Portfolio2021CaseStudy from "./components/Portfolio2021CaseStudy";
+import SboomCaseStudy from "./components/SboomCaseStudy";
 
 const sectionVariant = {
   hidden: { opacity: 0, y: 24 },
@@ -337,6 +338,10 @@ export default function App() {
           <CaseStudyShell isDark={isDark} isFR={isFR} slug="traine-savates">
             <TraineSavatesCaseStudy isDark={isDark} isFR={isFR} />
           </CaseStudyShell>
+          ) : location.pathname === "/sboom" ? (
+  <CaseStudyShell isDark={isDark} isFR={isFR} slug="sboom">
+    <SboomCaseStudy isDark={isDark} isFR={isFR} />
+  </CaseStudyShell>
         ) : location.pathname === "/excel" ? (
           <CaseStudyShell isDark={isDark} isFR={isFR} slug="excel">
             <ExcelCaseStudy isDark={isDark} isFR={isFR} />
@@ -752,6 +757,21 @@ export default function App() {
                   href="/traine-savates"
                   linkLabel={isFR ? "Lire le case study" : "Read case study"}
                 />
+
+                <ProjectCard
+  isDark={isDark}
+  category={isFR ? "Webmaster (Diplôme)" : "Webmaster (Diploma)"}
+  title={isFR ? "SBOOM — Site dynamique (FO + BO)" : "SBOOM — Dynamic website (FO + BO)"}
+  description={
+    isFR
+      ? "Mini CMS + mini e-commerce en PHP/MySQL : produits, catégories, commandes, utilisateurs, modération."
+      : "PHP/MySQL mini CMS + mini e-commerce: products, categories, orders, users, moderation."
+  }
+  tools="PHP · MySQL · HTML · CSS · JS · XAMPP"
+  href="/sboom"
+  linkLabel={isFR ? "Lire le case study" : "Read case study"}
+/>
+
 
                 <ProjectCard
                   isDark={isDark}
